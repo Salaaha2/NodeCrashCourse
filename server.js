@@ -1,12 +1,24 @@
 const http = require('http');
 const fs = require('fs')
+const _ = require('lodash')
 
 const server = http.createServer((req, res) => {    //(request Object, response Object)
     //localhost:3000 in browser
     // console.log('request made');
     //  /GET request 
     //req.url => path that the user visits 
-    console.log(req.url, req.method);
+    // console.log(req.url, req.method);
+
+    // Lodash
+    const num = _.random(0, 20);
+    console.log(num);
+
+    const greet = _.once(() => {
+        console.log('Hello');
+    });
+
+    greet();
+    greet();
 
     //set header contenet type
     res.setHeader('Content-Type', 'text/html');

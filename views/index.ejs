@@ -1,0 +1,36 @@
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+<body>
+    
+    <!-- Dynamic code: form of javascript -->
+    <!-- <% const name = 'mario' %> -->
+
+            <!-- outputting value to the screen, needs = -->
+        <!-- <p><%= name %></p> -->
+
+    <!-- Nav inside Nav ejs to update only once -->
+        <!-- minus uses includes value -->
+    <%- include('./partials/nav.ejs') %>
+
+    <div class="blogs content">
+        <h2>All Blogs</h2>
+        
+        <!-- Only if the length is greater than 0 then print this out -->
+        <% if (blogs.length > 0) { %>
+            <!-- adding a loop -->
+            <% blogs.forEach(blog => { %>
+                <!-- Output -->
+                <h3 class="title"><%= blog.title %></h3>
+                <p class="snippet"><%= blog.snippet %></p>
+
+            <% }) %>
+        <% } else { %>
+            <p>There are no blogs to display...</p>
+        <% } %>
+
+    </div>
+    
+    <%- include('./partials/footer.ejs') %>
+
+</body>
+</html>
